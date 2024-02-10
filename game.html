@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./game.css">
+        <title>Ships Game</title>
+    
+    </head>
+    <body>
+        <main>
+            <h1 class="title">Ships</h1>
+            <div id="game-container">
+                <section class="player one">
+                    <h1 class="player-tag">Player 1</h1>
+                    <div class="game-box first">
+                        <div id="one-one" class="box player-one" onclick="hitOrMiss('one-one', 'playerOne')">1</div>
+                        <div id="one-two" class="box player-one" onclick="hitOrMiss('one-two', 'playerOne')">2</div>
+                        <div id="one-three" class="box player-one" onclick="hitOrMiss('one-three', 'playerOne')">3</div>
+                        <div id="one-four" class="box player-one" onclick="hitOrMiss('one-four', 'playerOne')">4</div>
+                        <div id="one-five" class="box player-one" onclick="hitOrMiss('one-five', 'playerOne')">5</div>
+                        <div id="one-six" class="box player-one" onclick="hitOrMiss('one-six', 'playerOne')">6</div>
+                        <div id="one-seven" class="box player-one" onclick="hitOrMiss('one-seven', 'playerOne')">7</div>
+                        <div id="one-eight" class="box player-one" onclick="hitOrMiss('one-eight', 'playerOne')">8</div>
+                        <div id="one-nine" class="box player-one" onclick="hitOrMiss('one-nine', 'playerOne')">9</div>
+                        <div id="one-ten" class="box player-one" onclick="hitOrMiss('one-ten', 'playerOne')">10</div>
+                        <div id="one-eleven" class="box player-one" onclick="hitOrMiss('one-eleven', 'playerOne')">11</div>
+                        <div id="one-twelfe" class="box player-one" onclick="hitOrMiss('one-twelfe', 'playerOne')">12</div>
+                        <div id="one-thirteen" class="box player-one" onclick="hitOrMiss('one-thirteen', 'playerOne')">13</div>
+                        <div id="one-fourteen" class="box player-one" onclick="hitOrMiss('one-fourteen', 'playerOne')">14</div>
+                        <div id="one-fifteen" class="box player-one" onclick="hitOrMiss('one-fifteen', 'playerOne')">15</div>
+                        <div id="one-sixteen" class="box player-one" onclick="hitOrMiss('one-sixteen', 'playerOne')">16</div>
+                        <div id="one-seventeen" class="box player-one" onclick="hitOrMiss('one-seventeen', 'playerOne')">17</div>
+                        <div id="one-eighteen" class="box player-one" onclick="hitOrMiss('one-eighteen', 'playerOne')">18</div>
+                        <div id="one-nineteen" class="box player-one" onclick="hitOrMiss('one-nineteen', 'playerOne')">19</div>
+                        <div id="one-twenty" class="box player-one" onclick="hitOrMiss('one-twenty', 'playerOne')">20</div>
+                        <div id="one-twenty-one" class="box player-one" onclick="hitOrMiss('one-twenty-one', 'playerOne')">21</div>
+                        <div id="one-twenty-two" class="box player-one" onclick="hitOrMiss('one-twenty-two', 'playerOne')">22</div>
+                        <div id="one-twenty-three" class="box player-one" onclick="hitOrMiss('one-twenty-three', 'playerOne')">23</div>
+                        <div id="one-twenty-four" class="box player-one" onclick="hitOrMiss('one-twenty-four', 'playerOne')">24</div>
+                        <div id="one-twenty-five" class="box player-one" onclick="hitOrMiss('one-twenty-five', 'playerOne')">25</div>
+                        <h2 id="tries-player-one">Tries: </h2>
+                    </div>
+                    <h2 id="remaining-player-one">Ships Remaining: </h2>
+                </section>
+                <section class="player two">
+                    <h1 class="player">Player 2</h1>
+                    <div class="game-box second">
+                        <div id="two-one" class="box player-two" onclick="hitOrMiss('two-one', 'playerTwo')">1</div>
+                        <div id="two-two" class="box player-two" onclick="hitOrMiss('two-two', 'playerTwo')">2</div>
+                        <div id="two-three" class="box player-two" onclick="hitOrMiss('two-three', 'playerTwo')">3</div>
+                        <div id="two-four" class="box player-two" onclick="hitOrMiss('two-four', 'playerTwo')">4</div>
+                        <div id="two-five" class="box player-two" onclick="hitOrMiss('two-five', 'playerTwo')">5</div>
+                        <div id="two-six" class="box player-two" onclick="hitOrMiss('two-six', 'playerTwo')">6</div>
+                        <div id="two-seven" class="box player-two" onclick="hitOrMiss('two-seven', 'playerTwo')">7</div>
+                        <div id="two-eight" class="box player-two" onclick="hitOrMiss('two-eight', 'playerTwo')">8</div>
+                        <div id="two-nine" class="box player-two" onclick="hitOrMiss('two-nine', 'playerTwo')">9</div>
+                        <div id="two-ten" class="box player-two" onclick="hitOrMiss('two-ten', 'playerTwo')">10</div>
+                        <div id="two-eleven" class="box player-two" onclick="hitOrMiss('two-eleven', 'playerTwo')">11</div>
+                        <div id="two-twelfe" class="box player-two" onclick="hitOrMiss('two-twelfe', 'playerTwo')">12</div>
+                        <div id="two-thirteen" class="box player-two" onclick="hitOrMiss('two-thirteen', 'playerTwo')">13</div>
+                        <div id="two-fourteen" class="box player-two" onclick="hitOrMiss('two-fourteen', 'playerTwo')">14</div>
+                        <div id="two-ifteen" class="box player-two" onclick="hitOrMiss('two-ifteen', 'playerTwo')">15</div>
+                        <div id="two-sixteen" class="box player-two" onclick="hitOrMiss('two-sixteen', 'playerTwo')">16</div>
+                        <div id="two-seventeen" class="box player-two" onclick="hitOrMiss('two-seventeen', 'playerTwo')">17</div>
+                        <div id="two-eighteen" class="box player-two" onclick="hitOrMiss('two-eighteen', 'playerTwo')">18</div>
+                        <div id="two-nineteen" class="box player-two" onclick="hitOrMiss('two-nineteen', 'playerTwo')">19</div>
+                        <div id="two-twenty" class="box player-two" onclick="hitOrMiss('two-twenty', 'playerTwo')">20</div>
+                        <div id="two-twenty-one" class="box player-two" onclick="hitOrMiss('two-twenty-one', 'playerTwo')">21</div>
+                        <div id="two-twenty-two" class="box player-two" onclick="hitOrMiss('two-twenty-two', 'playerTwo')">22</div>
+                        <div id="two-twenty-three" class="box player-two" onclick="hitOrMiss('two-twenty-three', 'playerTwo')">23</div>
+                        <div id="two-twenty-four" class="box player-two" onclick="hitOrMiss('two-twenty-four', 'playerTwo')">24</div>
+                        <div id="two-twenty-five" class="box player-two" onclick="hitOrMiss('two-twenty-five', 'playerTwo')">25</div>
+                        <h2 id="tries-player-two">Tries: </h2>
+                    </div>
+                    <h2 id="remaining-player-two">Ships Remaining: </h2>
+                </section>
+                </div>
+            </div>
+            <h2 id="turn"></h2>
+            <h2 id="winner"></h2>
+        </main>
+        <script src="./game.js"></script>
+    </body>
+</html>

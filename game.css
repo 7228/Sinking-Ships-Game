@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-image: url("./images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2.5rem;
+}
+
+#game-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.player {
+    width: 500px
+}
+
+.player > h1 {
+    text-align: center;
+}
+
+.player-tag {
+    background-color: rgb(166, 225, 248);
+    width: 40%;
+    height: 50px;
+    margin: auto;
+}
+
+.game-box {
+    margin-top: 50px;
+    width: 500px;
+    max-width: 400px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap:2px;
+}
+
+.box {
+    background: url("./images/wood.jpg");
+    width: 100px;
+    height: 100px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
