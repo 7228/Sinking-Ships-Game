@@ -12,7 +12,7 @@
             <h1 class="title">Ships</h1>
             <div id="game-container">
                 <section class="player one">
-                    <h1 class="player-tag">Player 1</h1>
+                    <h1 class="player-tag" id="tag-one">Player 1</h1>
                     <div class="game-box first">
                         <div id="one-one" class="box player-one" onclick="hitOrMiss('one-one', 'playerOne')">1</div>
                         <div id="one-two" class="box player-one" onclick="hitOrMiss('one-two', 'playerOne')">2</div>
@@ -39,12 +39,14 @@
                         <div id="one-twenty-three" class="box player-one" onclick="hitOrMiss('one-twenty-three', 'playerOne')">23</div>
                         <div id="one-twenty-four" class="box player-one" onclick="hitOrMiss('one-twenty-four', 'playerOne')">24</div>
                         <div id="one-twenty-five" class="box player-one" onclick="hitOrMiss('one-twenty-five', 'playerOne')">25</div>
-                        <h2 id="tries-player-one">Tries: </h2>
                     </div>
-                    <h2 id="remaining-player-one">Ships Remaining: </h2>
+                    <div class="additional-info">
+                        <h2 id="tries-player-one" class="info-player-one">Tries: </h2>
+                        <h2 id="remaining-player-one" class="info-player-one">Ships Remaining: </h2>
+                    </div>
                 </section>
                 <section class="player two">
-                    <h1 class="player">Player 2</h1>
+                    <h1 class="player-tag" id="tag-two">Player 2</h1>
                     <div class="game-box second">
                         <div id="two-one" class="box player-two" onclick="hitOrMiss('two-one', 'playerTwo')">1</div>
                         <div id="two-two" class="box player-two" onclick="hitOrMiss('two-two', 'playerTwo')">2</div>
@@ -71,14 +73,17 @@
                         <div id="two-twenty-three" class="box player-two" onclick="hitOrMiss('two-twenty-three', 'playerTwo')">23</div>
                         <div id="two-twenty-four" class="box player-two" onclick="hitOrMiss('two-twenty-four', 'playerTwo')">24</div>
                         <div id="two-twenty-five" class="box player-two" onclick="hitOrMiss('two-twenty-five', 'playerTwo')">25</div>
-                        <h2 id="tries-player-two">Tries: </h2>
                     </div>
-                    <h2 id="remaining-player-two">Ships Remaining: </h2>
+                    <div class="additional-info">
+                        <h2 id="tries-player-two" class="info-player-two">Tries: </h2>
+                        <h2 id="remaining-player-two" class="info-player-two">Ships Remaining: </h2>
+                    </div>
                 </section>
                 </div>
             </div>
             <h2 id="turn"></h2>
             <h2 id="winner"></h2>
+            <button id="new-game" onclick="startNewGame()">New game</button>
         </main>
         <script src="./game.js"></script>
     </body>

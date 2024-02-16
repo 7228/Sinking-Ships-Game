@@ -3,6 +3,12 @@
     margin: 0;
 }
 
+:root {
+    --green: rgb(121, 228, 99);
+    --orange: rgb(248, 180, 77);
+    --red: rgb(231, 103, 43);
+}
+
 body {
     background-image: url("./images/background.jpg");
     background-repeat: no-repeat;
@@ -16,7 +22,7 @@ body {
 }
 
 #game-container {
-    margin-top: 50px;
+  
     display: flex;
     justify-content: space-around;
 }
@@ -30,10 +36,18 @@ body {
 }
 
 .player-tag {
-    background-color: rgb(166, 225, 248);
     width: 40%;
     height: 50px;
     margin: auto;
+    border-radius: 30%;
+}
+
+#tag-one {
+    background-color: var(--green);
+}
+
+#tag-two {
+    background-color: var(--orange);
 }
 
 .game-box {
@@ -53,4 +67,56 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.additional-info {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-player-one {
+    padding: 5px;
+    background-color: var(--green);
+    border: 1px solid #000;
+    border-radius: 10%;
+}
+
+.info-player-two {
+    padding: 5px;
+    background-color: var(--orange);
+    border: 1px solid #000;
+    border-radius: 10%;
+}
+
+#winner {
+    margin-top: 10px;
+    text-align: center;
+    background-color: var(--red);
+    width: 180px;
+    height: 40px;
+    margin: auto;
+}
+
+#turn {
+    background-color: var(--red);
+    width: 180px;
+    height: 40px;
+    margin: auto;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#new-game {
+    display: block;
+    width: 180px;
+    height: 50px;
+    margin: 20px auto;
+    background-color: #000;
+    border: 3px solid white;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
 }
