@@ -1,7 +1,16 @@
+let gameOver = false;
+const selected = [];
 
 let firstGroup = [[],[]];
 let secondGroup = [[], []];
 let thirdGroup = [[], []];
+
+let firstPlayerTurn = true;
+let secondPlayerTurn = false;
+
+let firstContainer = [[],[]];
+let secondContainer = [[],[]];
+let thirdContainer = [[],[]];
 
 const coordinates = {
     "playerOne": [
@@ -11,13 +20,6 @@ const coordinates = {
         firstGroup, secondGroup, thirdGroup, {tries: 0}
     ]
 }
-
-let firstPlayerTurn = true;
-let secondPlayerTurn = false;
-
-let firstContainer = [[],[]];
-let secondContainer = [[],[]];
-let thirdContainer = [[],[]];
 
 let playerOneTries = document.getElementById("tries-player-one");
 let playerTwoTries = document.getElementById("tries-player-two");
@@ -31,8 +33,18 @@ shipsRemainingPlayerTwo.innerText = "Ships remaining: 3";
 const allBoxesPlayerOne = document.querySelectorAll(".player-one");
 const allBoxesPlayerTwo = document.querySelectorAll(".player-two");
 
+const newGame = document.getElementById("new-game");
+newGame.style.display = "none";
+
+allBoxesPlayerTwo.forEach((box) => {
+    box.style.pointerEvents = "none";
+})
+
 const winner = document.getElementById("winner");
 const turn = document.getElementById("turn");
+winner.style.display = "none";
+turn.innerText = "Player 1 turn";
+
 
 const shipPositions = (index, coordinates, player) => {
     let randomNum = Math.floor(Math.random() * 26);
@@ -96,7 +108,9 @@ const shipSunk = () => {
     shipsRemainingPlayerTwo.innerText = `Ships remaining: ${shipOnePlayerTwo + shipTwoPlayerTwo + shipThreePlayerTwo}`;
 
     if(shipOnePlayerOne + shipTwoPlayerOne + shipThreePlayerOne === 0) {
+        winner.style.display = "block";
         winner.innerText = "Player 1 won!";
+        gameOver = true;
         allBoxesPlayerOne.forEach((box) => {
             box.style.pointerEvents = "none"
         })
@@ -104,7 +118,9 @@ const shipSunk = () => {
             box.style.pointerEvents = "none"
         })
     } else if (shipOnePlayerTwo + shipTwoPlayerTwo + shipThreePlayerTwo === 0) {
+        winner.style.display = "block";
         winner.innerText = "Player 2 won!";
+        gameOver = true;
         allBoxesPlayerOne.forEach((box) => {
             box.style.pointerEvents = "none"
         })
@@ -133,11 +149,25 @@ const shipHit = (num, location) => {
     
 }
 
+const isGameOver = () => {
+    if(gameOver === true) {
+        turn.style.display = "none";
+        newGame.style.display = "block";
+    } else if(gameOver === false && firstPlayerTurn === true) {
+        turn.innerText = "Player 1 turn";
+    } else if(gameOver === false && firstPlayerTurn === false) {
+        turn.innerText = "Player 2 turn"
+    }
+}
+
+
+
 const hitOrMiss = (id, location) => {
     firstPlayerTurn = !firstPlayerTurn;
     secondPlayerTurn = !secondPlayerTurn;
     const box = document.getElementById(id);
     let num = Number(box.textContent);
+
     
     if(firstPlayerTurn === false) {
         allBoxesPlayerOne.forEach((box) => {
@@ -164,7 +194,7 @@ const hitOrMiss = (id, location) => {
         box.style.backgroundImage = "url('./images/ship1.jpg')";
         coordinates[location][3].tries ++;
         shipHit(num,location);
-        box.style.pointerEvents = "none"
+        box.style.pointerEvents = "none";
          
     } else {
         box.style.backgroundImage = "url('./images/missed.jpg')";
@@ -174,7 +204,12 @@ const hitOrMiss = (id, location) => {
 
     playerOneTries.innerText = `Tries: ${coordinates['playerOne'][3].tries}`;
     playerTwoTries.innerText = `Tries: ${coordinates['playerTwo'][3].tries}`;
-    turn.innerText = `${firstPlayerTurn ? "Player 1 turn" : "Player 2 turn"}`;
+
+    isGameOver();
+}
+
+const startNewGame = () => {
+    window.addEventListener('click',()=>{ location.reload()})
 }
 
 
